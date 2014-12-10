@@ -13,7 +13,7 @@ write.table(dat, file="Hilgard_IAT_4cells.txt", sep="\t", row.names=F)
 # Collapse across congruency:
 molten1 = melt(dat, measure.vars="voltage")
 molten1 = molten1[,-2] # "cell" column no longer instructive
-switchingDat = dcast(molten1, sub + coronal + sagittal + channel + switch + incongruency 
+switchingDat = dcast(molten1, sub + coronal + sagittal + channel + switch  
                      + SC_RT + MC_RT + old_IAT + IAT_2003 ~ variable, fun.aggregate=mean)
 switchingDat$cell = "switch"
 switchingDat$cell[switchingDat$switch == 0] = "No-switch"
@@ -23,7 +23,7 @@ write.table(switchingDat, file="Hilgard_IAT_switching.txt", sep="\t", row.names=
 # Collapse across switching:
 molten2 = melt(dat, measure.vars="voltage")
 molten2 = molten2[,-2] # "cell" column no longer instructive
-congruencyDat = dcast(molten2, sub + coronal + sagittal + channel + switch + incongruency 
+congruencyDat = dcast(molten2, sub + coronal + sagittal + channel + incongruency 
                      + SC_RT + MC_RT + old_IAT + IAT_2003 ~ variable, fun.aggregate=mean)
 congruencyDat$cell = "incongruent"
 congruencyDat$cell[congruencyDat$incongruency == 0] = "congruent"
