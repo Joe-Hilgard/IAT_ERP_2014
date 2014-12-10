@@ -1,0 +1,3 @@
+Switching column: 	0 - no-switch, 1 - switch
+Incongruency column: 	0 - congruent, 1 - incongruent
+voltage:		mean amplitude 250-450 ms post-stimulus
