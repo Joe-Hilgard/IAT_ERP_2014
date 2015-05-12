@@ -1,5 +1,3 @@
-# Set working directory
-setwd("~/GitHub/Sherman_IAT_data-request")
 # load reshape2 package
 # install.packages("reshape2")
 require(reshape2)
